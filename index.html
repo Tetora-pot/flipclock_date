@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>フリップ形式の時計</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> <!-- Bebas Neueフォントをインポート -->
     <style>
         /* ページ全体の設定 */
         body {
@@ -12,7 +13,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: "ヒラギノ角ゴ Pro W8", "Hiragino Kaku Gothic Pro", sans-serif;
+            font-family: "Bebas Neue", sans-serif; /* Bebas Neueを使用 */
             background-color: #f5f5f5; /* ライトモードの背景色 */
             overflow: hidden;
         }
@@ -48,9 +49,9 @@
             color: #548164; /* ライトモードのテキストカラー */
             border-radius: 15px;
             position: relative;
-            font-size: calc(15vw + 1rem); /* 時間表示のフォントサイズを自動調整 */
-            font-weight: bolder;
-            letter-spacing: -3px;
+            font-size: calc(16vw + 1rem); /* 時間表示のフォントサイズを自動調整 */
+            font-weight: bolder; /* 太字 */
+            letter-spacing: -2px; /* カーニング調整 */
             min-width: 60px; /* 最小幅を設定 */
         }
 
@@ -68,7 +69,7 @@
         /* 日付と曜日のデザイン */
         .date, .day {
             position: absolute;
-            font-size: calc(4vw + 0.5rem); /* 日付と曜日のフォントサイズを自動調整 */
+            font-size: calc(5vw + 1rem); /* 日付と曜日のフォントサイズを自動調整 */
             font-weight: bold; /* 太字 */
             color: #548164; /* ライトモードのテキストカラー */
         }
@@ -89,7 +90,7 @@
         /* ダークモードのスタイル */
         @media (prefers-color-scheme: dark) {
             body {
-                background-color: #191919;
+                background-color: #191919; /* ダークモードの背景色 */
             }
             .digit {
                 background-color: #354C4B; /* ダークモードのフリップ背景色 */
