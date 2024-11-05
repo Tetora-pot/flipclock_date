@@ -5,64 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>フリップ形式の時計</title>
     <style>
+        /* ページ全体の設定 */
         body {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             font-family: "ヒラギノ角ゴ Pro W8", "Hiragino Kaku Gothic Pro", sans-serif;
             background-color: #f5f5f5; /* ライトモードの背景色 */
+            overflow: hidden;
         }
 
+        /* 時計全体のコンテナ */
+        .clock-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90vw;
+            height: 90vh;
+            max-width: 120vh;
+            max-height: 90vw;
+            transform: scale(1);
+            aspect-ratio: 4 / 3; /* 時計の比率を4:3に設定 */
+        }
+
+        /* 時計本体のスタイル */
         .clock {
             display: flex;
-            font-size: 3em;
-            margin: 20px 0;
             position: relative;
+            width: 100%;
+            height: 100%;
         }
 
+        /* 各桁のデザイン */
         .digit {
-            width: 250px;
-            height: 350px;
-            text-align: center;
-            line-height: 350px;
-            margin: 0 5px;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 1%;
             background-color: #EEF3ED; /* ライトモードのフリップ背景色 */
             color: #548164; /* ライトモードのテキストカラー */
-            border-radius: 20px;
+            border-radius: 15px;
             position: relative;
-            font-size: 3em;
+            font-size: 15vw; /* 時間表示を大きく */
             font-weight: bolder;
-            letter-spacing: -1pt;
+            letter-spacing: -3px;
         }
 
+        /* セパレーターのデザイン */
         .separator {
             position: absolute;
             top: 50%;
             left: 0;
             right: 0;
-            height: 2px;
-            background-color: #EEF3ED; /* ライトモード用の線の色 */
+            height: 1px;
+            background-color: #EEF3ED;
             transform: translateY(-50%);
         }
 
+        /* 日付と曜日のデザイン */
         .date, .day {
             position: absolute;
-            font-size: 0.5em;
-            font-weight: bold; /* 太字に設定 */
+            font-size: 2vw;
+            font-weight: bold; /* 太字 */
             color: #548164; /* ライトモードのテキストカラー */
         }
 
+        /* 日付と曜日の位置指定 */
         .date {
-            left: 10px;
-            bottom: 10px;
+            left: 2vw;
+            bottom: 2vh;
         }
 
         .day {
-            right: 10px;
-            bottom: 10px;
+            right: 2vw;
+            bottom: 2vh;
         }
 
         /* ダークモードのスタイル */
@@ -84,17 +103,19 @@
     </style>
 </head>
 <body>
-    <div class="clock" id="clock">
-        <div class="digit" id="hours">
-            <div class="separator"></div>
-            <span>--</span>
+    <div class="clock-container">
+        <div class="clock" id="clock">
+            <div class="digit" id="hours">
+                <div class="separator"></div>
+                <span>--</span>
+            </div>
+            <div class="digit" id="minutes">
+                <span>--</span>
+                <div class="separator"></div>
+            </div>
+            <div class="date" id="date">--.--</div>
+            <div class="day" id="day">--</div>
         </div>
-        <div class="digit" id="minutes">
-            <span>--</span>
-            <div class="separator"></div>
-        </div>
-        <div class="date" id="date">--.--</div>
-        <div class="day" id="day">--</div>
     </div>
 
     <script>
