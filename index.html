@@ -26,7 +26,6 @@
             height: 90vh;
             max-width: 120vh;
             max-height: 90vw;
-            transform: scale(1);
             aspect-ratio: 4 / 3; /* 時計の比率を4:3に設定 */
         }
 
@@ -49,7 +48,7 @@
             color: #548164; /* ライトモードのテキストカラー */
             border-radius: 15px;
             position: relative;
-            font-size: 15vw; /* 時間表示を大きく */
+            font-size: 20vw; /* 時間表示のフォントサイズを調整 */
             font-weight: bolder;
             letter-spacing: -3px;
         }
@@ -68,7 +67,7 @@
         /* 日付と曜日のデザイン */
         .date, .day {
             position: absolute;
-            font-size: 2vw;
+            font-size: 5vw; /* 日付と曜日のフォントサイズを調整 */
             font-weight: bold; /* 太字 */
             color: #548164; /* ライトモードのテキストカラー */
         }
@@ -82,6 +81,8 @@
         .day {
             right: 2vw;
             bottom: 2vh;
+            text-transform: uppercase; /* 曜日を大文字に */
+            text-align: right; /* 右詰め */
         }
 
         /* ダークモードのスタイル */
