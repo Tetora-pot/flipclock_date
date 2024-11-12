@@ -13,7 +13,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: "Bebas Neue", sans-serif; /* Bebas Neueを使用 */
+            font-family: "Bebas Neue", sans-serif;
             background-color: #f5f5f5; /* ライトモードの背景色 */
             overflow: hidden;
         }
@@ -23,10 +23,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 90vw;
-            height: 90vh;
-            max-width: 120vh;
-            max-height: 90vw;
+            width: 60vw;
+            height: 80vh;
+            max-width: 90vh;
+            max-height: 120vw;
             aspect-ratio: 4 / 3; /* 時計の比率を4:3に設定 */
         }
 
@@ -49,9 +49,9 @@
             color: #548164; /* ライトモードのテキストカラー */
             border-radius: 15px;
             position: relative;
-            font-size: calc(18vw + 1rem); /* 時間表示のフォントサイズを自動調整 */
-            font-weight: bolder; /* 太字 */
-            letter-spacing: -2px; /* カーニング調整 */
+            font-size: 23vw; /* フリップサイズに合わせてフォントを最大化 */
+            font-weight: bolder;
+            letter-spacing: -2px;
             min-width: 60px; /* 最小幅を設定 */
         }
 
@@ -69,9 +69,9 @@
         /* 日付と曜日のデザイン */
         .date, .day {
             position: absolute;
-            font-size: calc(5vw + 1rem); /* 日付と曜日のフォントサイズを自動調整 */
-            font-weight: bold; /* 太字 */
-            color: #548164; /* ライトモードのテキストカラー */
+            font-size: 4vw; /* 日付と曜日のフォントサイズを調整 */
+            font-weight: bold;
+            color: #548164;
         }
 
         /* 日付と曜日の位置指定 */
@@ -83,24 +83,24 @@
         .day {
             right: 2vw;
             bottom: 2vh; /* 右下に配置 */
-            text-transform: uppercase; /* 曜日を大文字に */
-            text-align: right; /* 右詰め */
+            text-transform: uppercase;
+            text-align: right;
         }
 
         /* ダークモードのスタイル */
         @media (prefers-color-scheme: dark) {
             body {
-                background-color: #191919; /* ダークモードの背景色 */
+                background-color: #191919;
             }
             .digit {
                 background-color: #354C4B; /* ダークモードのフリップ背景色 */
                 color: #529E71; /* ダークモードのテキストカラー */
             }
             .separator {
-                background-color: #354C4B; /* ダークモードの線の色 */
+                background-color: #354C4B;
             }
             .date, .day {
-                color: #529E71; /* ダークモードのテキストカラー */
+                color: #529E71;
             }
         }
     </style>
